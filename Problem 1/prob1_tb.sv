@@ -8,7 +8,7 @@ module prob1_tb ();
     logic                       clk;
     logic [8:0]           vectornum;
     logic [8:0]              errors;
-    logic [39:0] testvectors[255:0];
+    logic [55:0] testvectors[255:0];
     logic [27:0]     golden_product;
 
     integer handle3;
@@ -33,7 +33,7 @@ module prob1_tb ();
             desc3 = handle3;
             $fdisplay(
                 desc3,
-                " X:   Y:        Z:    Golden_Z Correct"
+                " X:   Y:       Z:  Golden_Z Correct"
             );
         end
     
@@ -56,7 +56,7 @@ module prob1_tb ();
                 (Z == golden_product)
             );
             vectornum = vectornum + 1;
-            if (testvectors[vectornum] === 256'bx)
+            if (testvectors[vectornum] === 56'bx)
                 begin
                     $display("%d tests completed with %d errors", vectornum, errors);
                     $finish;

@@ -45,6 +45,7 @@ module csam16x12tc (Z, X, Y);
 
 
 	// generate the partial products.
+	// Convert first column to nand except for bottom
 	nand pp1(P0[15], X[15], Y[0]);
 	and pp2(P0[14], X[14], Y[0]);
 	and pp3(P0[13], X[13], Y[0]);
@@ -222,28 +223,29 @@ module csam16x12tc (Z, X, Y);
 	and pp175(P10[1], X[1], Y[10]);
 	and pp176(P10[0], X[0], Y[10]);
 	and pp177(sum11[15], X[15], Y[11]);
-	and pp178(P11[14], X[14], Y[11]);
-	and pp179(P11[13], X[13], Y[11]);
-	and pp180(P11[12], X[12], Y[11]);
-	and pp181(P11[11], X[11], Y[11]);
-	and pp182(P11[10], X[10], Y[11]);
-	and pp183(P11[9], X[9], Y[11]);
-	and pp184(P11[8], X[8], Y[11]);
-	and pp185(P11[7], X[7], Y[11]);
-	and pp186(P11[6], X[6], Y[11]);
-	and pp187(P11[5], X[5], Y[11]);
-	and pp188(P11[4], X[4], Y[11]);
-	and pp189(P11[3], X[3], Y[11]);
-	and pp190(P11[2], X[2], Y[11]);
-	and pp191(P11[1], X[1], Y[11]);
-	and pp192(P11[0], X[0], Y[11]);
+	// Convert all to nand for NMFA at the bottom
+	nand pp178(P11[14], X[14], Y[11]);
+	nand pp179(P11[13], X[13], Y[11]);
+	nand pp180(P11[12], X[12], Y[11]);
+	nand pp181(P11[11], X[11], Y[11]);
+	nand pp182(P11[10], X[10], Y[11]);
+	nand pp183(P11[9], X[9], Y[11]);
+	nand pp184(P11[8], X[8], Y[11]);
+	nand pp185(P11[7], X[7], Y[11]);
+	nand pp186(P11[6], X[6], Y[11]);
+	nand pp187(P11[5], X[5], Y[11]);
+	nand pp188(P11[4], X[4], Y[11]);
+	nand pp189(P11[3], X[3], Y[11]);
+	nand pp190(P11[2], X[2], Y[11]);
+	nand pp191(P11[1], X[1], Y[11]);
+	nand pp192(P11[0], X[0], Y[11]);
 
 	// Array Reduction
-	half_adder  HA1(carry1[14],sum1[14],P1[14],P0[15]);
+	full_adder  HA1(carry1[14],sum1[14],P1[14],P0[15], 1'b1); // Converted to full adder based on math
 	half_adder  HA2(carry1[13],sum1[13],P1[13],P0[14]);
 	half_adder  HA3(carry1[12],sum1[12],P1[12],P0[13]);
 	half_adder  HA4(carry1[11],sum1[11],P1[11],P0[12]);
-	half_adder  HA5(carry1[10],sum1[10],P1[10],P0[11]);
+	full_adder  HA5(carry1[10],sum1[10],P1[10],P0[11], 1'b1); // Converted to full adder based on math
 	half_adder  HA6(carry1[9],sum1[9],P1[9],P0[10]);
 	half_adder  HA7(carry1[8],sum1[8],P1[8],P0[9]);
 	half_adder  HA8(carry1[7],sum1[7],P1[7],P0[8]);
@@ -420,7 +422,7 @@ module csam16x12tc (Z, X, Y);
 	assign Z[11] = sum11[0];
 
 	// Final Carry Propagate Addition
-	full_adder CPA1(carry12[0],Z[12],carry11[0],sum11[1], 1'b1); // converted to full adder with carry-in of 1
+	half_adder CPA1(carry12[0],Z[12],carry11[0],sum11[1]); // converted to full adder with carry-in of 1
 	full_adder CPA2(carry12[1],Z[13],carry11[1],carry12[0],sum11[2]);
 	full_adder CPA3(carry12[2],Z[14],carry11[2],carry12[1],sum11[3]);
 	full_adder CPA4(carry12[3],Z[15],carry11[3],carry12[2],sum11[4]);

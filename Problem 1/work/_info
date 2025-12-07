@@ -1,0 +1,126 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2023.4_3 2024.02, Feb 17 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/a20413415/Exam2_sim/Take-Home-Exam-2/Problem 1
+T_opt
+Z2 !s110 1765076300
+V1h8nDU?LQgWFmoHfc2Y9h0
+04 8 4 work prob1_tb fast 0
+=1-000ae431a4f1-6934ed4c-95c0f-2a18ef
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z3 tCvgOpt 0
+n@_opt
+OL;O;2023.4_3;77
+vcsam16x12tc
+Z4 2csam16x12tc.sv|full_adder.sv|half_adder.sv|prob1_tb.sv
+Z5 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+R2
+!i10b 1
+!s100 W<fCGOIY7[fUMJ0SNcLNP2
+IU@h?Wi1;fXHn3GOD@;1CR3
+S1
+R1
+w1765070053
+8csam16x12tc.sv
+Fcsam16x12tc.sv
+!i122 0
+L0 1 444
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+Z7 OL;L;2023.4_3;77
+r1
+!s85 0
+31
+Z8 !s108 1765076300.000000
+Z9 !s107 prob1_tb.sv|half_adder.sv|full_adder.sv|csam16x12tc.sv|
+Z10 !s90 csam16x12tc.sv|full_adder.sv|half_adder.sv|prob1_tb.sv|
+!i113 0
+Z11 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+vfull_adder
+R4
+R5
+R2
+!i10b 1
+!s100 gdi0ZDd<]T4c0V99XOiJS3
+IQ1Jh^zNd=0UVj5W<EYX5d3
+S1
+R1
+Z12 w1765068033
+8full_adder.sv
+Ffull_adder.sv
+!i122 0
+Z13 L0 1 6
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R11
+R3
+vhalf_adder
+R4
+R5
+R2
+!i10b 1
+!s100 efQH4KJgLQdLRS>o@T]a;0
+II<G6jN2=jfn:=9llKeMBo2
+S1
+R1
+R12
+8half_adder.sv
+Fhalf_adder.sv
+!i122 0
+R13
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R11
+R3
+vprob1_tb
+R4
+R5
+R2
+!i10b 1
+!s100 0@M4>m4]WH5_Tn4DN1gd:1
+I^;oC50Oll678HzRiGO=;40
+S1
+R1
+w1765069496
+8prob1_tb.sv
+Fprob1_tb.sv
+!i122 0
+L0 3 64
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R11
+R3

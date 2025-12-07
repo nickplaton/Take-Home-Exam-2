@@ -23,20 +23,20 @@ if [file exists work] {
 }
 vlib work
 # compile source files
-vlog csam16x12tc.sv full_adder.sv n_full_adder.sv half_adder.sv prob1_tb.sv
+vlog csam16x12tc.sv full_adder.sv half_adder.sv prob1_tb.sv
 
 # start and run simulation
-vsim -voptargs=+acc work.prob3_tb
+vsim -voptargs=+acc work.prob1_tb
 view wave
 
 -- display input and output signals as hexidecimal values
 add wave -noupdate -divider -height 32 "Input"
-add wave -hex -label "X" /prob3_tb/X
-add wave -hex -label "Y" /prob3_tb/Y
+add wave -hex -label "X" /prob1_tb/X
+add wave -hex -label "Y" /prob1_tb/Y
 add wave -noupdate -divider -height 32 "Output"
-add wave -hex -label "Z" /prob3_tb/Z
+add wave -hex -label "Z" /prob1_tb/Z
 add wave -noupdate -divider -height 32 "Golden Vectors"
-add wave -hex -label "Golden Z" /prob3_tb/golden_product
+add wave -hex -label "Golden Z" /prob1_tb/golden_product
 
 -- Set Wave Output Items 
 TreeUpdate [SetDefaultTree]
